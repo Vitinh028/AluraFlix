@@ -1,52 +1,92 @@
-<html lang=*pt-BR*>
+/* Resetando margens e configurando o fundo */
+body {
+    color: white;
+    background: black;
+    margin: 0;
+    font-family: "Yarndings 20", system-ui;
+}
 
-<heat>
-   <link rel="stylesheet" href= "styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+/* Estilo para o cabeçalho */
+header {
+    border-bottom: solid 2px rgb(42, 122, 228);
+    padding: 20px;
+    font-size: 32px;
+    color: rgb(42, 122, 228);
+    text-align: center;
+}
 
-    <title>Homem Aranha</title>
-    <heat>
+/* Estilo para a seção chamada (hero section) */
+.chamada {
+    background: rgb(184, 156, 213);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-    <body>
-        <header>Homem Aranha</header>
+.chamada-texto {
+    margin-right: 5%;
+}
 
-            <section class=*chamada*>
-            <div class="chamada-texto">
-                <h1>ATRAVÉS DO ARANHAVERSO</h1>
-                <p>#homem-aranha</p>
-            </div>
+h1 {
+    font-size: 40px;
+}
 
-            <div>
+/* Estilo para os parágrafos */
+p {
+    font-size: 20px;
+}
 
+/* Categoria de vídeos - Ajuste para exibição em flex */
+.categoria-videos {
+    display: flex;
+    overflow-x: auto; /* Permite rolar horizontalmente */
+    gap: 20px;
+    padding: 10px 0;
+    align-items: center;
+}
 
+.categoria {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
 
+.categoria h2 {
+    color: rgb(42, 122, 228);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-             </div>
-             </section>
+/* Ajuste no tamanho dos vídeos */
+.categoria-videos video {
+    width: 300px; /* Ajuste o tamanho do vídeo conforme necessário */
+    height: auto;
+    border-radius: 8px; /* Adiciona bordas arredondadas aos vídeos */
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-             <section class="categoria">
-                <h2>Filmes e séries</h2>
-                <div class="categoria-vídeos"
-                <a href="https://www.https://youtu.be/_ZKmyDO9TZM">
-                    <img src="https://www.img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpng"/>
-                    </a>
-                    <a href="https://www.youtu.be/lV2plyhSRBU">
-                    <img src="https://www.img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpng"/>
-                    </a>
-                    <a href="https://www.youtu.be/3JiMr-HgHJ8">
-                    <img src="https://www.img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpng"/>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=cs15QqG6Gjc">
-                    <img src="https://www.img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpng"/>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=V1OS3OwzYh8">
-                    <img src="<iframe width="560" height="315" src="https://www.youtube.com/embed/V1OS3OwzYh8?si=ZqbCD0lw7ydSeYqm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"/>
-                    </a>
-                </div>
-                </section>
+/* Efeito hover nas imagens/vídeos */
+.categoria-videos video:hover {
+    opacity: 1;
+    border: 3px solid rgb(42, 122, 228); /* Cor da borda em hover */
+    transform: scale(1.05); /* Aumenta um pouco a imagem/vídeo no hover */
+}
 
-            </body>
+/* Ajuste no layout quando a tela for pequena */
+@media (max-width: 768px) {
+    .categoria-videos {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            </html>
+    .categoria-videos video {
+        margin-bottom: 10px;
+        width: 90%; /* Ajuste para que os vídeos fiquem mais estreitos em telas menores */
+    }
+}
+
