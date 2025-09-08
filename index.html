@@ -1,4 +1,4 @@
-/* Resetando margens e configurando o fundo */
+/* Estilos básicos para a página */
 body {
     color: white;
     background: black;
@@ -6,7 +6,7 @@ body {
     font-family: "Yarndings 20", system-ui;
 }
 
-/* Estilo para o cabeçalho */
+/* Cabeçalho */
 header {
     border-bottom: solid 2px rgb(42, 122, 228);
     padding: 20px;
@@ -15,11 +15,10 @@ header {
     text-align: center;
 }
 
-/* Estilo para a seção chamada (hero section) */
+/* Estilos para a seção chamada */
 .chamada {
     background: rgb(184, 156, 213);
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 80px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,18 +38,9 @@ p {
     font-size: 20px;
 }
 
-/* Categoria de vídeos - Ajuste para exibição em flex */
-.categoria-videos {
-    display: flex;
-    overflow-x: auto; /* Permite rolar horizontalmente */
-    gap: 20px;
-    padding: 10px 0;
-    align-items: center;
-}
-
+/* Estilos para a categoria de vídeos */
 .categoria {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     margin-top: 50px;
     text-align: center;
 }
@@ -61,23 +51,34 @@ p {
     margin-bottom: 20px;
 }
 
-/* Ajuste no tamanho dos vídeos */
-.categoria-videos video {
-    width: 300px; /* Ajuste o tamanho do vídeo conforme necessário */
-    height: auto;
-    border-radius: 8px; /* Adiciona bordas arredondadas aos vídeos */
-    opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+/* Contêiner dos vídeos */
+.categoria-videos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;  /* Permite quebrar linha se necessário */
+    overflow-x: auto;
+    padding: 10px;
 }
 
-/* Efeito hover nas imagens/vídeos */
+/* Estilo para os vídeos */
+.categoria-videos video {
+    width: 300px; /* Tamanho fixo para os vídeos */
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px; /* Espaço entre os vídeos */
+}
+
+/* Efeito ao passar o mouse sobre o vídeo */
 .categoria-videos video:hover {
     opacity: 1;
-    border: 3px solid rgb(42, 122, 228); /* Cor da borda em hover */
-    transform: scale(1.05); /* Aumenta um pouco a imagem/vídeo no hover */
+    border: 3px solid rgb(42, 122, 228); /* Cor da borda no hover */
+    transform: scale(1.05); /* Leve zoom */
 }
 
-/* Ajuste no layout quando a tela for pequena */
+/* Ajustes para telas pequenas */
 @media (max-width: 768px) {
     .categoria-videos {
         flex-direction: column;
@@ -85,8 +86,6 @@ p {
     }
 
     .categoria-videos video {
-        margin-bottom: 10px;
-        width: 90%; /* Ajuste para que os vídeos fiquem mais estreitos em telas menores */
+        width: 90%; /* Vídeos maiores em telas menores */
     }
 }
-
