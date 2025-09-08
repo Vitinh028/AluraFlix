@@ -1,56 +1,87 @@
+/* Resetando margens e configurando o fundo */
 body {
     color: white;
     background: black;
-    margin: 0px;
+    margin: 0;
     font-family: "Yarndings 20", system-ui;
-    margin-bottom: 100px;
 }
 
+/* Estilo para o cabeçalho */
 header {
     border-bottom: solid 2px rgb(42, 122, 228);
     padding: 20px;
     font-size: 32px;
-    color: rgb(42, 122, 228)
+    color: rgb(42, 122, 228);
 }
 
-.chamada{
+/* Estilo para a seção chamada (hero section) */
+.chamada {
     background: rgb(184, 156, 213);
-    padding-bottom: 80px;
     padding-top: 80px;
+    padding-bottom: 80px;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
+
 .chamada-texto {
     margin-right: 5%;
 }
+
 h1 {
     font-size: 40px;
 }
- 
+
+/* Estilo para os parágrafos */
 p {
     font-size: 20px;
 }
 
+/* Categoria de vídeos - Ajuste para exibição em flex */
 .categoria-videos {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll; /* Permite rolar horizontalmente */
     gap: 10px;
+    padding: 10px 0;
 }
 
 .categoria {
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 50px;
+    text-align: center;
 }
 
-.categoria-videos img{
-    opacity: 0.5;
+/* Ajuste no tamanho das imagens */
+.categoria-videos img {
+    opacity: 0.7;
     height: 200px;
+    width: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Efeito suave para hover */
 }
 
-.categoria-videos img.houver{
-    opacity: 1.o;
-    border: 3px solid green;
+/* Efeito hover nas imagens */
+.categoria-videos img:hover {
+    opacity: 1;
+    border: 3px solid rgb(42, 122, 228); /* Cor da borda em hover */
+    transform: scale(1.05); /* Aumenta um pouco a imagem no hover */
 }
-.categoria h2{
-    color rgb(42, 122, 228)
+
+/* Estilo para os títulos das categorias */
+.categoria h2 {
+    color: rgb(42, 122, 228);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Ajuste no layout quando a tela for pequena */
+@media (max-width: 768px) {
+    .categoria-videos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categoria-videos img {
+        margin-bottom: 10px;
+    }
+}
