@@ -4,6 +4,11 @@ body {
     background: black;
     margin: 0;
     font-family: "Yarndings 20", system-ui;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
 }
 
 /* Cabeçalho */
@@ -13,6 +18,7 @@ header {
     font-size: 32px;
     color: rgb(42, 122, 228);
     text-align: center;
+    width: 100%;
 }
 
 /* Estilos para a seção chamada */
@@ -23,6 +29,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 .chamada-texto {
@@ -43,6 +50,7 @@ p {
     padding: 20px;
     margin-top: 50px;
     text-align: center;
+    width: 100%;
 }
 
 .categoria h2 {
@@ -54,11 +62,11 @@ p {
 /* Contêiner dos vídeos */
 .categoria-videos {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;  /* Isso vai permitir que os vídeos quebrem para a linha seguinte, se necessário */
     justify-content: center;
-    flex-wrap: wrap;  /* Permite quebrar linha se necessário */
-    overflow-x: auto;
+    gap: 20px;
     padding: 10px;
+    width: 100%;
 }
 
 /* Estilo para os vídeos */
