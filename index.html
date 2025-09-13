@@ -1,205 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8" />
-  <title>Aluraflix</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap"
-    rel="stylesheet"
-  />
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #121212;
-      color: #fff;
-    }
-
-    header {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 3rem;
-      text-align: center;
-      padding: 20px 0;
-      letter-spacing: 3px;
-    }
-
-    .chamada {
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      padding: 0 10px;
-    }
-
-    .chamada-texto h1 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
-      text-align: center;
-    }
-
-    .chamada-texto p {
-      font-size: 1.2rem;
-      text-align: center;
-      margin-top: 0;
-      color: #bbb;
-    }
-
-    /* Wrapper para vídeos manter proporção 16:9 */
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-      margin-bottom: 20px;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      border-radius: 8px;
-    }
-
-    /* Video principal maior */
-    .chamada .video-wrapper {
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-    }
-
-    /* Grid para vídeos menores */
-    .categoria {
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      padding: 0 10px;
-    }
-
-    .categoria h2 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-align: center;
-      letter-spacing: 2px;
-    }
-
-    .categoria-videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .categoria-videos .video-wrapper {
-      padding-bottom: 56.25%;
-      height: 0;
-      margin: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px 0;
-      background: #222;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    /* Responsividade fina */
-    @media (max-width: 500px) {
-      header {
-        font-size: 2rem;
-      }
-      .chamada-texto h1 {
-        font-size: 1.8rem;
-      }
-      .categoria h2 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITINHO CORINTHIAS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            background-color: #CC0000;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+        }
+        
+        .video-principal {
+            width: 100%;
+            margin-bottom: 30px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #CC0000;
+        }
+        
+        .video-principal iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .videos-menores {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .video-menor {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #CC0000;
+        }
+        
+        .video-menor iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .videos-menores {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-principal iframe {
+                height: 300px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header>𝕊ℙ𝕀𝕂𝔼 𝔾𝕆𝕁𝕀ℝ𝔸</header>
-
-  <section class="chamada">
-    <div class="chamada-texto">
-      <h1>𝕄𝔼𝕃ℍ𝕆ℝ ℂ𝔸ℕ𝔸𝕃 𝔻𝕆 𝕄𝕌ℕ𝔻𝕆</h1>
-      <p>#Spike Gojira</p>
-    </div>
-
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/cltqntupWKY"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </section>
-
-  <section class="categoria">
-    <h2>Mais Videos :D</h2>
-  \\ videos menores!
-    <div class="categoria-videos">
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/ARmXs_t7stc"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/klkWBTzZIks"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/G0_1FMMUU3o"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/ikd-eiyD6x8"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/UHSWwZOHaVQ"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Aluraflix - Todos os direitos reservados.</p>
-  </footer>
+    <header>
+        <h1>VITINHO CORINTHIAS</h1>
+        <p>Os Melhores Momentos</p>
+    </header>
+    
+    <main>
+        <section class="video-principal">
+            <iframe src="https://www.youtube.com/embed/FGvhHbu1C9k" allowfullscreen></iframe>
+        </section>
+        
+        <section class="videos-menores">
+            <div class="video-menor">
+                <iframe src="https://www.youtube.com/embed/9cIWcoQONfk" allowfullscreen></iframe>
+            </div>
+            
+            <div class="video-menor">
+                <iframe src="https://www.youtube.com/embed/CYjj9cxcOvE" allowfullscreen></iframe>
+            </div>
+            
+            <div class="video-menor">
+                <iframe src="https://www.youtube.com/embed/c4cI1AA2Hm8" allowfullscreen></iframe>
+            </div>
+            
+            <div class="video-menor">
+                <iframe src="https://www.youtube.com/embed/frfc9bAV8YE" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Site não oficial - Melhores momentos do Corinthians</p>
+        <p>Desenvolvido para os fãs do Timão</p>
+    </footer>
 </body>
-
 </html>
